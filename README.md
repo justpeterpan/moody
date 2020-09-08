@@ -16,7 +16,7 @@ Open source mood tracker
 
 ## TODO
 
-- [ ] Create ERD
+- [x] Create ERD
 - [ ] Create Vue App (3?)
 - [ ] Create Firebase Project
   - [ ] Add rules
@@ -26,8 +26,12 @@ Open source mood tracker
   - [ ] Signin screen
   - [ ] Moodpicker screen
   - [ ] Overview screen
+- [ ] Logo
 
-## Tables
+## TABLES
+
+![ERD](docs/erd.png)
+[ERD Lucidchart](https://app.lucidchart.com/invitations/accept/ea5ea308-100d-422d-904e-8341194502ce)
 
 ### User
 
@@ -40,7 +44,7 @@ Open source mood tracker
 - name
 - emoji
 
-### PickedMood
+### Picked
 
 - user_id
 - mood_id
