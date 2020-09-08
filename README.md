@@ -16,8 +16,8 @@ Open source mood tracker
 
 ## TODO
 
-- [x] Create ERD
-- [ ] Create Vue App (3?)
+- [X] Create ERD
+- [X] Create Vue App
 - [ ] Create Firebase Project
   - [ ] Add rules
 - [ ] Add auth
