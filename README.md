@@ -53,6 +53,8 @@ Open source mood tracker
 
 ### color palette
 
+![color_palette](docs/colors.png)
+
 - `#F8B441`
 - `#EB381D`
 - `#040D0F`
