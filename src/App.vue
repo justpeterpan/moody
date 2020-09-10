@@ -1,15 +1,28 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <button @click="signin()" v-if="!isSignedIn">Signin</button>
+    <button @click="signout()" v-if="isSignedIn">Signout</button>
+    <img :src="user.image" alt="" />
+    <span>{{ user.name }}</span>
+    <div id="nav"><router-link to="/">Home</router-link> |</div>
+    <router-view class="container" />
   </div>
 </template>
 
+<script>
+import { mapActions, mapState } from 'vuex';
+
+export default {
+  computed: mapState('auth', ['user', 'isSignedIn']),
+  methods: mapActions('auth', ['signin', 'signout']),
+};
+</script>
+
 <style lang="scss">
 #app {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

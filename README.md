@@ -16,11 +16,11 @@ Open source mood tracker
 
 ## TODO
 
-- [X] Create ERD
-- [X] Create Vue App
-- [ ] Create Firebase Project
-  - [ ] Add rules
-- [ ] Add auth
+- [x] Create ERD
+- [x] Create Vue App
+- [x] Create Firebase Project
+  - [x] Add rules
+- [x] Add auth (Signin via Google so far)
 - [ ] Add [VueFire](https://github.com/vuejs/vuefire/tree/master/packages/vuexfire)
 - [ ] Create wireframes
   - [ ] Signin screen
@@ -37,6 +37,8 @@ Open source mood tracker
 
 - id
 - name
+- image
+- created_at
 
 ### Mood
 
