@@ -21,7 +21,8 @@ Open source mood tracker
 - [x] Create Firebase Project
   - [x] Add rules
 - [x] Add auth (Signin via Google so far)
-- [ ] Add [VueFire](https://github.com/vuejs/vuefire/tree/master/packages/vuexfire)
+- [x] Add [VueFire](https://github.com/vuejs/vuefire/tree/master/packages/vuexfire)
+- [x] Mood picker adding data to firestore
 - [ ] Create wireframes
   - [ ] Signin screen
   - [ ] Moodpicker screen
@@ -39,19 +40,13 @@ Open source mood tracker
 - name
 - image
 - created_at
+- moods[]
 
 ### Mood
 
 - id
 - name
 - emoji
-
-### Picked
-
-- user_id
-- mood_id
-- description
-- timestamp
 
 ###
 

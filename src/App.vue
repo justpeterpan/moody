@@ -4,7 +4,8 @@
     <button @click="signout()" v-if="isSignedIn">Signout</button>
     <img :src="user.image" alt="" />
     <span>{{ user.name }}</span>
-    <div id="nav"><router-link to="/">Home</router-link> |</div>
+    <div id="nav"><router-link to="/">Home</router-link> | <router-link to="/select">Tracker</router-link></div>
+
     <router-view class="container" />
   </div>
 </template>
@@ -19,6 +20,11 @@ export default {
 </script>
 
 <style lang="scss">
+html,
+body {
+  height: 100%;
+}
+
 #app {
   display: grid;
   justify-items: center;
