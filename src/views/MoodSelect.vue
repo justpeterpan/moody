@@ -8,14 +8,21 @@
       <fieldset class="form__options">
         <legend class="form__question">How ya doin?</legend>
         <div class="form__answer" v-for="mood in moods" :key="mood.name">
-          <input type="radio" name="mood" :id="mood.id" :value="mood.name" @click="handleSubmit($event)" />
+          <input
+            type="radio"
+            name="mood"
+            :id="mood.id"
+            :value="mood.name"
+            :alt="mood.emoji"
+            @click="handleSubmit($event)"
+          />
           <label :for="mood.id">
-            <div class="form__emoji">{{ mood.emoji }}</div>
+            <span class="form__emoji">{{ mood.emoji }}</span>
             {{ mood.name }}
           </label>
         </div>
       </fieldset>
-      <button class="form__button">Submit Mood</button>
+      <!-- <button class="form__button">Submit Mood</button> -->
     </form>
   </div>
 </template>
@@ -37,10 +44,11 @@ export default {
         .doc(this.user.id)
         .collection('pickedMoods')
         .add({
-          mood_id: e.target.id,
+          id: e.target.id,
+          emoji: e.target.alt,
           timestamp: new Date(),
         });
-      router.push('/');
+      router.push('/overview');
     },
   },
 };

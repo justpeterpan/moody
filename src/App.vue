@@ -4,7 +4,10 @@
     <button @click="signout()" v-if="isSignedIn">Signout</button>
     <img :src="user.image" alt="" />
     <span>{{ user.name }}</span>
-    <div id="nav"><router-link to="/">Home</router-link> | <router-link to="/select">Tracker</router-link></div>
+    <div id="nav" v-if="isSignedIn">
+      <router-link to="/">Home</router-link> | <router-link to="/select">Tracker</router-link> |
+      <router-link to="/overview">Overview</router-link>
+    </div>
 
     <router-view class="container" />
   </div>

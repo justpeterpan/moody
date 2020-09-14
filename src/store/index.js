@@ -4,6 +4,7 @@ import { vuexfireMutations } from 'vuexfire';
 
 import auth from './auth';
 import moods from './moods';
+import user from './user';
 
 Vue.use(Vuex);
 
@@ -13,5 +14,6 @@ export default new Vuex.Store({
   modules: {
     auth,
     moods,
+    user,
   },
 });
