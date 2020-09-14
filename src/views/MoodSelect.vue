@@ -17,7 +17,7 @@
             @click="handleSubmit($event)"
           />
           <label :for="mood.id">
-            <span class="form__emoji">{{ mood.emoji }}</span>
+            <p class="form__emoji">{{ mood.emoji }}</p>
             {{ mood.name }}
           </label>
         </div>
@@ -56,13 +56,12 @@ export default {
 
 <style lang="scss" scoped>
 .form {
-  border: 1px solid lightgreen;
   padding: 0;
   margin: 0;
 }
 .form__options {
   display: grid;
-  grid-auto-flow: column;
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
   border: none;
 }
@@ -70,15 +69,18 @@ export default {
 .form__answer {
   display: flex;
   flex-direction: column;
-  padding: 0;
+  min-width: 120px;
+  min-height: 120px;
 }
 
 .form__emoji {
-  padding: 10px;
+  font-size: 40px;
+  margin: 20px;
 }
 
 label {
   border: 1px solid black;
+  border-radius: 4px;
   height: 100%;
   width: 100%;
   cursor: pointer;
@@ -86,6 +88,7 @@ label {
   &:focus,
   &:active {
     border: 1px solid rgba(green, 0.5);
+    background-color: aquamarine;
   }
 }
 

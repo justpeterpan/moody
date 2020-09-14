@@ -1,24 +1,16 @@
 <template>
   <div id="app">
-    <button @click="signin()" v-if="!isSignedIn">Signin</button>
-    <button @click="signout()" v-if="isSignedIn">Signout</button>
-    <img :src="user.image" alt="" />
-    <span>{{ user.name }}</span>
-    <div id="nav" v-if="isSignedIn">
-      <router-link to="/">Home</router-link> | <router-link to="/select">Tracker</router-link> |
-      <router-link to="/overview">Overview</router-link>
-    </div>
+    <NavBar />
 
     <router-view class="container" />
   </div>
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex';
+import NavBar from './components/NavBar';
 
 export default {
-  computed: mapState('auth', ['user', 'isSignedIn']),
-  methods: mapActions('auth', ['signin', 'signout']),
+  components: { NavBar },
 };
 </script>
 
@@ -26,6 +18,14 @@ export default {
 html,
 body {
   height: 100%;
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
 }
 
 #app {
