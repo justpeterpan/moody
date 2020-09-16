@@ -4,9 +4,9 @@ import db from '@/db';
 
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
-    if (user.user) {
-      user = user.user;
-    }
+    // if (user.user) {
+    //   user = user.user;
+    // }
     const setUser = {
       id: user.uid,
       name: user.displayName,

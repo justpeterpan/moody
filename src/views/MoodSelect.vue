@@ -14,6 +14,7 @@
             :id="mood.id"
             :value="mood.name"
             :alt="mood.emoji"
+            :lang="mood.value"
             @click="handleSubmit($event)"
           />
           <label :for="mood.id">
@@ -22,7 +23,6 @@
           </label>
         </div>
       </fieldset>
-      <!-- <button class="form__button">Submit Mood</button> -->
     </form>
   </div>
 </template>
@@ -40,14 +40,13 @@ export default {
   methods: {
     ...mapActions('moods', ['bindMoods']),
     handleSubmit(e) {
-      db.collection('users')
-        .doc(this.user.id)
-        .collection('pickedMoods')
-        .add({
-          id: e.target.id,
-          emoji: e.target.alt,
-          timestamp: new Date(),
-        });
+      db.collection('picked').add({
+        userId: this.user.id,
+        moodId: e.target.id,
+        emoji: e.target.alt,
+        value: e.target.lang,
+        timestamp: new Date(),
+      });
       router.push('/overview');
     },
   },

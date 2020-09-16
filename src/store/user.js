@@ -14,13 +14,34 @@ const mutations = {
   },
 };
 
+const getters = {
+  getTimestamps: state => {
+    let timestamps = [];
+    state.userMoods.forEach(mood => {
+      const regexp = /.*(?= GMT)/;
+      const strippedTimestamp = mood.timestamp
+        .toDate()
+        .toString()
+        .match(regexp);
+      timestamps.push(strippedTimestamp);
+    });
+    return timestamps;
+  },
+  getMoodValues: state => {
+    let moodValues = [];
+    state.userMoods.forEach(mood => {
+      moodValues.push(mood.value);
+    });
+    return moodValues;
+  },
+};
+
 const actions = {
   async getUserMoods({ commit }, user) {
-    console.log('start');
     const snapshot = await db
-      .collection('users')
-      .doc(user)
-      .collection('pickedMoods')
+      .collection('picked')
+      .where('userId', '==', user)
+      .orderBy('timestamp', 'asc')
       .get();
     let moods = [];
     snapshot.forEach(doc => {
@@ -34,5 +55,6 @@ export default {
   namespaced: true,
   state,
   mutations,
+  getters,
   actions,
 };
