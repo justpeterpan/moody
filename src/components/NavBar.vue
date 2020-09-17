@@ -54,8 +54,12 @@ export default {
     cursor: pointer;
   }
 
+  a {
+    list-style: none;
+  }
   ::marker {
-    content: '';
+    color: rgba(0, 0, 0, 0);
+    // content: '';
   }
 }
 </style>
