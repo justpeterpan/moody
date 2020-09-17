@@ -96,7 +96,7 @@ export default {
                 var xLabels = data.ticks;
 
                 xLabels.forEach(function(labels, i) {
-                  if (i % 4 != 0) {
+                  if (i % 2 != 0) {
                     xLabels[i] = '';
                   }
                 });
