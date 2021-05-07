@@ -1,6 +1,7 @@
 # MOODY
 
-Open source mood tracker
+Open source mood tracker  
+[Demo](https://emooodji.netlify.app/)
 
 ## FEATURES
 
